@@ -10,8 +10,6 @@ import { FiAlertCircle } from 'react-icons/fi';
 
 import { useField } from '@unform/core';
 
-import Tooltip from '../Tooltip';
-
 import { Container, Error } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -23,7 +21,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   const InputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
-  const { fieldName, defaultValue, error, registerField } = useField(name);
+  const { fieldName, error, registerField } = useField(name);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
